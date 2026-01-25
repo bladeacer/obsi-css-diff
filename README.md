@@ -8,6 +8,8 @@ Heavily WIP.
 
 ## Credits
 
-https://github.com/linuxserver/docker-obsidian
+[Docker Images of Obsidian.md \(unofficial\)](https://github.com/linuxserver/docker-obsidian)
 
-https://obsidian.md/changelog/
+[Canonical List of Obsidian.md versions](https://obsidian.md/changelog/)
+
+[Electron to Chromium versions](https://github.com/Kilian/electron-to-chromium)

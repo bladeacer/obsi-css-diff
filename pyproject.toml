@@ -5,8 +5,8 @@ description = "Manage Obsidian Docker versions and extract app.css"
 requires-python = ">=3.11"
 dependencies = [
     "requests>=2.31.0",
-    "typer>=0.9.0",
-    "rich>=13.7.0",
+    "textual",
+    "typer",
     "docker>=7.0.0",
     "feedparser>=6.0.12",
 ]

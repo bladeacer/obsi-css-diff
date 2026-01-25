@@ -15,7 +15,7 @@ from rich.table import Table
 
 # Configuration
 CHANGELOG_URL: str = "https://obsidian.md/changelog.xml"
-IMAGE_NAME: str = "lscr.io/linuxserver/obsidian"
+IMAGE_NAME: str = "linuxserver/obsidian"
 CACHE_FILE: Path = Path(".obsidian_cache.json")
 CSS_DIR: Path = Path("extracted_css")
 

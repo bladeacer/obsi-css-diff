@@ -1,3 +1,5 @@
 .venv
 .ruff_cache
-.obsidian_cache.json
+.obsidian_cache
+__pycache__
+**/__pycache__

@@ -1,10 +1,10 @@
 .PHONY: setup install lint fix format clean run help
 
 PYTHON = uv run python
-SCRIPT = main.py
+MODULE = obsi_diff
 
-# Logic to grab everything after 'run'
-# Usage: make run list-versions
+# 1. Capture everything after 'run'
+# $(wordlist 2, ...) grabs all words starting from the second position
 RUN_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
 
 help: ## Show this help message
@@ -21,13 +21,8 @@ fix: ## Run ruff and automatically fix issues
 	uv run ruff check . --fix --unsafe-fixes
 	uv run ruff format .
 
-run: ## Pass-through to main.py (Usage: make run <command> [args])
-	@$(PYTHON) $(SCRIPT) $(RUN_ARGS) || if [ $$? -eq 2 ]; then exit 0; else exit $$?; fi
+run: ## Run the app (Usage: make run interact --refresh)
+	@$(PYTHON) -m $(MODULE) $(RUN_ARGS) || if [ $$? -eq 2 ]; then exit 0; else exit $$?; fi
 
-clean: ## Cleanup cache and local artifacts
-	docker rm -f $$(docker ps -aq --filter "name=obsidian-") 2>/dev/null || true
-	rm -f *.css *.tar .obsidian_cache.json
-
-# Catch-all to prevent Make from complaining about script arguments
 %:
 	@:
